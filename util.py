@@ -29,11 +29,11 @@ def load_saved_artificates():
     global __data_columns
     global __locations
 
-    with open("C:\c++\Machine learning\websiteMain\model\columns.json", 'r')as f:
+    with open("C:\Projects\Machine learning\websiteMain\model\columns.json", 'r')as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
     global __model
-    with open(r"C:\c++\Machine learning\websiteMain\model\banglore_home_prices_model.pickle", 'rb') as f:
+    with open(r"C:\Projects\Machine learning\websiteMain\model\banglore_home_prices_model.pickle", 'rb') as f:
         __model = pickle.load(f)
         print("Loading saved artificates..done")
 
