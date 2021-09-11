@@ -25,8 +25,6 @@ def predict_home_price():
     bhk= float(request.form['bhk'])
     bath= float(request.form['bath'])
 
-
-
     responce =jsonify({
         'estimated_price':util.get_estimated_price(location,total_sqft,bhk,bath)
     })

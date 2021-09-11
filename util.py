@@ -1,10 +1,11 @@
 import json, pickle
-
 import numpy as np
 
 __locations = None
 __data_columns = None
 __model=None
+
+
 
 def get_estimated_price(location,sqft,bhk,bath):
     try:
@@ -23,12 +24,10 @@ def get_estimated_price(location,sqft,bhk,bath):
 def get_location_names():
     return __locations
 
-
 def load_saved_artificates():
     print("Loding saved artifivats start")
-    global __data_columns
+    global __data_columns           
     global __locations
-
     with open("C:\Projects\Machine learning\websiteMain\model\columns.json", 'r')as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]
@@ -36,6 +35,7 @@ def load_saved_artificates():
     with open(r"C:\Projects\Machine learning\websiteMain\model\banglore_home_prices_model.pickle", 'rb') as f:
         __model = pickle.load(f)
         print("Loading saved artificates..done")
+
 
 
 if __name__ == '__main__':
